@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#F2BC23</color>
+    <color name="colorPrimaryDark">#C7960E</color>
     <color name="colorAccent">#D81B60</color>
     <color name="Event_Yellow">#F2BC23</color>
     <color name="Event_Dark_Yellow"> #C7960E</color>
+    <color name="Date_Gray">#616161</color>
 </resources>
