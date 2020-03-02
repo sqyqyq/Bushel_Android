@@ -51,6 +51,8 @@ class EventActivity : AppCompatActivity(),EventsAdapter.OnEventClickListner {
         })
     }
 
+
+    //apply recycle view
     private fun showData(Events: List<Event>) {
         event_recycleView.apply {
             layoutManager  = LinearLayoutManager(this@EventActivity)
@@ -61,6 +63,7 @@ class EventActivity : AppCompatActivity(),EventsAdapter.OnEventClickListner {
 
     }
 
+    //add menu button
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu to use in the action bar
         val inflater = menuInflater
@@ -68,8 +71,9 @@ class EventActivity : AppCompatActivity(),EventsAdapter.OnEventClickListner {
         return super.onCreateOptionsMenu(menu)
     }
 
+    //add logout in menu button
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        var id = item.itemId
+        val id = item.itemId
         if (id==R.id.action_logout){
             AppPreferences.getInstance(this).clear()
             val intent = Intent(this, MainActivity::class.java)
@@ -80,6 +84,7 @@ class EventActivity : AppCompatActivity(),EventsAdapter.OnEventClickListner {
         return super.onOptionsItemSelected(item)
     }
 
+    //check if logout
     override fun onStart() {
         super.onStart()
         if (!AppPreferences.getInstance(this).isLoggedIn) {
@@ -90,11 +95,12 @@ class EventActivity : AppCompatActivity(),EventsAdapter.OnEventClickListner {
         }
     }
 
+    //method of click item in recycle view
     override fun onItemClick(item: Event, position: Int) {
         val intent = Intent(this, DetailActivity::class.java)
-//        intent.putExtra("CARNAME", item.name)
-//        intent.putExtra("CARDESC", item.description)
-//        intent.putExtra("CARLOGO", item.logo.toString())
+       intent.putExtra("ID", item.id)
+       intent.putExtra("TITLE", item.title)
+
         startActivity(intent)
     }
 }

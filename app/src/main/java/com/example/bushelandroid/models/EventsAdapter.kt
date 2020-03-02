@@ -34,7 +34,10 @@ class EventsAdapter (private val events: List<Event>, var clickListner:OnEventCl
 
          fun initialize(item:Event, action:OnEventClickListner){
              eventName.text = item.title
-             eventDate.text = item.start_date_time
+//             eventDate.text = item.start_date_time
+             val startdate = LocalDateTime.parse(item.start_date_time, DateTimeFormatter.ISO_DATE_TIME)
+             val enddate = LocalDateTime.parse(item.end_date_time, DateTimeFormatter.ISO_DATE_TIME)
+              eventDate.text = startdate.toString()+" - "+enddate.toLocalTime().toString()
              Picasso.get().load(item.image_url).transform(RoundedCornersTransformation(20,0)).fit().centerCrop().into(eventPic)
 
              itemView.setOnClickListener { action.onItemClick(item, adapterPosition) }

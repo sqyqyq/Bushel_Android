@@ -1,3 +1,5 @@
 package com.example.bushelandroid.models
 
-data class User( val token:String?)
+data class SpeakersID(
+    val id:Int
+)

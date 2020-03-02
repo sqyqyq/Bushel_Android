@@ -11,7 +11,7 @@ import com.example.bushelandroid.models.LoginResponse
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Response
-import javax.security.auth.callback.Callback
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             }
 
 
-            //question new retrofit will get error
+            //retrofit for login
             RetrofitClient.instance.userlogin(username,password).enqueue(object : retrofit2.Callback<LoginResponse>
             {
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
@@ -60,6 +60,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    //check if isloggedin
     override fun onStart() {
         super.onStart()
         if (AppPreferences.getInstance(this).isLoggedIn) {

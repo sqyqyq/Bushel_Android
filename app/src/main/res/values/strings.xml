@@ -2,9 +2,9 @@
     <string name="app_name">Bushel Android</string>
 
 
-    <string name="prompt_email">Email</string>
+    <string name="prompt_email">UserName</string>
     <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in">Sign in</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
@@ -13,4 +13,7 @@
     <string name="fargo_event_app">Fargo Event APP</string>
     <string name="logout">Logout</string>
     <string name="event_picture">event picture</string>
+    <string name="timeBrack"> - </string>
+    <string name="Speaker">Speaker</string>
+
 </resources>

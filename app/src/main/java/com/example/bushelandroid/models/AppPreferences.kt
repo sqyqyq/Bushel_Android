@@ -10,14 +10,7 @@ class AppPreferences private constructor(private val myContx: Context) {
             return sharedPreferences.getInt("id", -1) != -1
         }
 
-//    val token: String?
-//        get() {
-//            val sharedPreferences = myContx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
-//            return sharedPreferences.getString("authorization",null)
-////                sharedPreferences.getString("username", null),
-//
-//
-//        }
+
 
     fun  getToken(): String? {
         val sharedPreferences = myContx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
